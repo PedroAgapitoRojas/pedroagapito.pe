@@ -1,0 +1,108 @@
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        width: 100%;
+
+        display: none;
+        flex-direction: column;
+
+        margin-top: 1rem;
+
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hero {
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+}
+/* =========================================
+   PASADA FINAL RESPONSIVE
+========================================= */
+@media (max-width: 1100px) {
+    .container { width: min(92%, 1000px); }
+    .projects-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+    .navbar { gap: .8rem; padding: .9rem 0; }
+    .logo { font-size: 1.08rem; margin-right: auto; }
+    .theme-buttons { order: 2; gap: .42rem; }
+    .theme-btn { width: 31px; height: 31px; font-size: .82rem; }
+    .menu-toggle { order: 3; font-size: 1.55rem; }
+
+    section { scroll-margin-top: 92px; }
+    .hero { min-height: auto; }
+    .hero-content { padding-top: 2.2rem; padding-bottom: 2.2rem; }
+    .hero-title { font-size: clamp(2.25rem, 11vw, 3.2rem); line-height: 1.04; }
+    .hero-description { max-width: 40rem; margin-inline: auto; }
+    .hero-code-bg { left: 4%; width: 92vw; top: 11%; font-size: .62rem; opacity: .60; }
+
+    .projects-grid,
+    .certificates-grid,
+    .skills-grid { grid-template-columns: 1fr; }
+    .project-card { grid-template-columns: 1fr; }
+    .project-image { min-height: 210px; }
+    .contact-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+    .container { width: 91%; }
+    .theme-buttons { gap: .28rem; }
+    .theme-btn { width: 29px; height: 29px; }
+    .hero-subtitle { font-size: .78rem; }
+    .hero-roles { font-size: .9rem; }
+    .hero-buttons { gap: .7rem; }
+    .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+    .project-content { padding: 1rem; }
+    .project-tech { gap: .35rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
+
+/* V20 — contenido esencial nunca depende de reveal en móvil */
+@media (max-width: 768px) {
+    .reveal,
+    .reveal.active {
+        opacity: 1 !important;
+        transform: none !important;
+        visibility: visible !important;
+    }
+
+    #certificates,
+    #certificates .container,
+    #certificates .section-title,
+    #certificates .section-subtitle,
+    #certificatesGrid {
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+}

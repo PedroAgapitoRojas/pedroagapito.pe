@@ -1,0 +1,108 @@
+:root {
+
+    --color-background: #0a0a0f;
+
+    --color-surface: #111118;
+
+    --color-border: #2a2a3a;
+
+    --color-text: #f1f5f9;
+
+    --color-text-secondary: #94a3b8;
+
+    --color-primary: #6366f1;
+
+    --color-secondary: #a855f7;
+
+    --transition: all 0.3s ease;
+
+}
+
+
+[data-theme="purple"] {
+
+    --color-background: #0a0a0f;
+
+    --color-surface: #111118;
+
+    --color-border: #2a2a3a;
+
+    --color-text: #f1f5f9;
+
+    --color-text-secondary: #94a3b8;
+
+    --color-primary: #6366f1;
+
+    --color-secondary: #a855f7;
+
+}
+
+/* =========================================
+   TEMA VERDE
+========================================= */
+
+[data-theme="green"] {
+
+    --color-background: #021412;
+
+    --color-surface: #0b1f1c;
+
+    --color-border: #17403a;
+
+    --color-text: #f1f5f9;
+
+    --color-text-secondary: #94a3b8;
+
+    --color-primary: #2dd4bf;
+
+    --color-secondary: #60a5fa;
+
+}
+
+/* =========================================
+   TEMA CLARO
+========================================= */
+
+[data-theme="light"] {
+
+    --color-background: #f8fafc;
+
+    --color-surface: #ffffff;
+
+    --color-border: #dbe4f0;
+
+    --color-text: #0f172a;
+
+    --color-text-secondary: #475569;
+
+    --color-primary: #6366f1;
+
+    --color-secondary: #8b5cf6;
+
+}
+/* Tema claro final: se mantiene sobrio y usa verde como contraste para no perder la identidad del portafolio. */
+[data-theme="light"] {
+    --color-background: #f4f7f4;
+    --color-surface: #ffffff;
+    --color-border: #d6e1d8;
+    --color-text: #142019;
+    --color-text-secondary: #526159;
+    --color-primary: #167a52;
+    --color-secondary: #b58b35;
+    --shadow-soft: 0 14px 38px rgba(31, 55, 42, .10);
+}
+
+
+/* Paleta dedicada a certificados: evita el cruce verde + amarillo. */
+[data-theme="purple"] {
+    --certificate-start: #5b5ee8;
+    --certificate-end: #8b5cf6;
+}
+[data-theme="green"] {
+    --certificate-start: #0f766e;
+    --certificate-end: #2dd4bf;
+}
+[data-theme="light"] {
+    --certificate-start: #116b48;
+    --certificate-end: #2f9e6f;
+}

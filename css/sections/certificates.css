@@ -1,0 +1,375 @@
+/* =========================================
+   CERTIFICADOS
+========================================= */
+
+.certificates {
+    padding: 6rem 0;
+}
+
+.certificates-grid {
+    width: 100%;
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.35rem;
+    align-items: stretch;
+}
+
+@media (max-width: 1180px) {
+    .certificates-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    .certificates-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.certificate-card {
+
+    position: relative;
+
+    background: var(--color-surface);
+
+    border: 1px solid var(--color-border);
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+
+    height: 100%;
+}
+
+.certificate-card:hover {
+
+    transform:
+        translateY(-10px);
+
+    border-color: var(--color-primary);
+
+    box-shadow:
+        0 20px 40px rgba(0,0,0,0.18);
+}
+
+.certificate-image {
+    height: 150px;
+    background: linear-gradient(
+        135deg,
+        var(--certificate-start),
+        var(--certificate-end)
+    );
+}
+
+.certificate-content {
+    padding: 1.35rem;
+    background: var(--color-surface);
+}
+
+.certificate-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--color-text);
+}
+
+.certificate-content p {
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+/* =========================
+   CERTIFICATE BUTTON
+========================= */
+
+.certificate-link {
+
+    width: 100%;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.95rem 1.2rem;
+
+    margin-top: 1.5rem;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--certificate-start),
+            var(--certificate-end)
+        );
+
+    color: white;
+
+    font-size: 0.95rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.15);
+}
+
+.certificate-link:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 18px 35px rgba(0,0,0,0.22);
+}
+
+.certificate-link:active {
+
+    transform:
+        scale(0.98);
+}
+
+.certificate-link:hover {
+    opacity: 0.8;
+}
+
+.certificate-icon {
+    width: 100%;
+    height: 180px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 4rem;
+
+    border-bottom: 1px solid var(--color-border);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.03),
+            rgba(255,255,255,0.01)
+        );
+}
+
+
+
+/* =========================
+   MODAL
+========================= */
+
+.certificate-modal {
+
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0,0,0,0.75);
+
+    backdrop-filter: blur(10px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: all 0.35s ease;
+
+    z-index: 5000;
+}
+
+.certificate-modal.active {
+
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+
+    width: 90%;
+    max-width: 1100px;
+
+    height: 90vh;
+
+    background: #111;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    position: relative;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.5);
+
+    transform: scale(0.9);
+
+    transition: transform 0.35s ease;
+}
+
+.certificate-modal.active .modal-content {
+    transform: scale(1);
+}
+
+.modal-content iframe {
+
+    width: 100%;
+    height: 100%;
+}
+
+.close-modal {
+
+    position: absolute;
+
+    top: 18px;
+    right: 18px;
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    z-index: 20;
+}
+
+.close-modal:hover {
+
+    background: var(--color-primary);
+
+    transform: rotate(90deg);
+}
+
+/* =========================
+   CERTIFICATE TOP
+========================= */
+
+.certificate-icon {
+
+    width: 100%;
+    height: 170px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--certificate-start),
+            var(--certificate-end)
+        );
+
+    border-bottom: 1px solid var(--color-border);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+/* brillo suave premium */
+
+.certificate-icon::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    background:
+        rgba(255,255,255,0.08);
+
+    border-radius: 50%;
+
+    top: -120px;
+    right: -120px;
+}
+
+/* círculo del emoji */
+
+.certificate-icon span {
+
+    width: 95px;
+    height: 95px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 3rem;
+
+    font-weight: 700;
+
+    background: rgba(15,15,20,0.35);
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.25);
+
+    transition: all 0.35s ease;
+
+    z-index: 2;
+}
+
+/* hover premium */
+
+.certificate-card:hover .certificate-icon span {
+
+    transform:
+        translateY(-6px)
+        scale(1.08);
+
+    box-shadow:
+        0 18px 35px rgba(0,0,0,0.3);
+}
+
+.certificate-platform {
+
+    color: var(--color-primary);
+
+    font-size: 0.95rem;
+
+    font-weight: 600;
+
+    margin-bottom: 1rem;
+
+    opacity: 0.9;
+}
+
+
+[data-theme="light"] .certificate-card,
+[data-theme="light"] .certificate-item {
+    box-shadow: 0 16px 38px rgba(31,55,42,.10);
+}
+[data-theme="light"] .certificate-modal {
+    background: rgba(20, 32, 25, .72);
+}
+
+.certificate-cover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.certificate-link:disabled { opacity: .48; cursor: default; transform: none; }

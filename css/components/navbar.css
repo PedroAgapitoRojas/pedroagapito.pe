@@ -1,0 +1,444 @@
+/* =========================================
+   NAVBAR
+========================================= */
+
+.header {
+
+    width: 100%;
+
+    border-bottom: 1px solid var(--color-border);
+
+    position: sticky;
+
+    top: 0;
+
+    background-color: rgba(10, 10, 15, 0.9);
+
+    backdrop-filter: blur(10px);
+
+    z-index: 1000;
+}
+
+.header.scrolled {
+    background: rgba(15, 15, 25, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.navbar {
+
+    width: 90%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 1.3rem 0;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 2rem;
+}
+
+.logo {
+
+    color: var(--color-text);
+
+    font-size: 1.4rem;
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+.nav-links {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 2rem;
+
+    list-style: none;
+}
+
+.nav-links a {
+
+    color: var(--color-text-secondary);
+
+    text-decoration: none;
+
+    font-weight: 500;
+
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+
+    color: var(--color-primary);
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--color-text);
+  background: none;
+  border: none;
+}
+
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+    z-index: 2000;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+
+    position: absolute;
+    top: 70px;
+    right: 20px;
+
+    width: 220px;
+
+    padding: 20px;
+    border-radius: 14px;
+
+    background: rgba(10, 10, 15, 0.95);
+    backdrop-filter: blur(12px);
+
+    border: 1px solid var(--color-border);
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+
+    z-index: 1000;
+  }
+
+  .nav-links a.active {
+    color: var(--color-primary);
+    position: relative;
+}
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    color: var(--color-text);
+  }
+
+  /* evita hover raro en móvil */
+  .nav-links a:hover {
+    transform: none;
+  }
+}
+
+.theme-buttons {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.7rem;
+}
+
+.theme-btn {
+
+    width: 35px;
+
+    height: 35px;
+
+    border-radius: 50%;
+
+    border: 1px solid var(--color-border);
+
+    background-color: var(--color-surface);
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+    font-size: 1rem;
+}
+
+.theme-btn:hover {
+
+    transform: scale(1.1);
+
+    border-color: var(--color-primary);
+}
+
+
+
+/* =========================
+   ACTIVE LINK PRO
+========================= */
+
+.nav-links a {
+    position: relative;
+    transition: all 0.25s ease;
+}
+
+
+/* texto activo */
+.nav-links a.active {
+  color: var(--color-text);
+}
+
+
+/* línea animada inferior */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+
+  width: 0%;
+  height: 2px;
+
+  background: var(--color-primary);
+  border-radius: 2px;
+
+  transition: width 0.3s ease;
+}
+
+/* activa animación */
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* hover suave tipo app moderna */
+.nav-links a:hover {
+    color: var(--color-primary);
+    transform: translateY(-1px);
+}
+
+
+.nav-links a.active::before {
+    content: "";
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+
+    background: var(--color-primary);
+    box-shadow: 0 0 10px var(--color-primary);
+}
+.theme-btn.active {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+}
+
+[data-theme="light"] .header {
+    background-color: rgba(244, 247, 244, .90);
+}
+
+[data-theme="light"] .header.scrolled {
+    background: rgba(255, 255, 255, .88);
+    box-shadow: 0 10px 30px rgba(31, 55, 42, .10);
+}
+
+[data-theme="light"] .nav-links {
+    background: transparent;
+}
+
+@media (max-width: 768px) {
+    [data-theme="light"] .nav-links {
+        background: rgba(255, 255, 255, .96);
+        box-shadow: 0 12px 34px rgba(31, 55, 42, .14);
+    }
+}
+
+
+/* =========================================
+   V12 — NAVBAR RESPONSIVE + AUTO HIDE/SHOW
+========================================= */
+.header {
+    transition: transform .32s ease, background-color .25s ease, box-shadow .25s ease, border-color .25s ease;
+    will-change: transform;
+}
+
+.header.header-hidden {
+    transform: translateY(calc(-100% - 8px));
+}
+
+.header.menu-open {
+    transform: translateY(0) !important;
+}
+
+@media (max-width: 768px) {
+    .header {
+        overflow: visible;
+    }
+
+    .navbar {
+        position: relative;
+        flex-wrap: nowrap;
+        min-height: 62px;
+    }
+
+    .logo {
+        flex: 0 1 auto;
+        min-width: 0;
+        white-space: nowrap;
+    }
+
+    .theme-buttons {
+        flex: 0 0 auto;
+    }
+
+    .menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 auto;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        border-radius: 10px;
+        font-size: 1.35rem;
+        line-height: 1;
+        transition: background-color .2s ease, color .2s ease, transform .2s ease;
+    }
+
+    .menu-toggle:active {
+        transform: scale(.96);
+    }
+
+    .nav-links {
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 0;
+        right: 0;
+        width: 100%;
+        max-height: min(72vh, 560px);
+        overflow-y: auto;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: .2rem;
+        margin: 0;
+        padding: .8rem;
+        text-align: left;
+        border-radius: 16px;
+        background: rgba(10, 10, 15, .94);
+        -webkit-backdrop-filter: blur(18px);
+        backdrop-filter: blur(18px);
+        border: 1px solid var(--color-border);
+        box-shadow: 0 18px 42px rgba(0,0,0,.28);
+        z-index: 2100;
+    }
+
+    .nav-links.active {
+        display: flex;
+        animation: mobileMenuIn .2s ease both;
+    }
+
+    .nav-links li,
+    .nav-links a {
+        width: 100%;
+    }
+
+    .nav-links a {
+        padding: .82rem .85rem;
+        border-radius: 10px;
+    }
+
+    .nav-links a::after,
+    .nav-links a.active::before {
+        display: none;
+    }
+
+    .nav-links a.active {
+        color: var(--color-primary);
+        background: color-mix(in srgb, var(--color-primary) 10%, transparent);
+    }
+
+    [data-theme="light"] .nav-links {
+        background: rgba(248, 250, 248, .94);
+        box-shadow: 0 18px 42px rgba(31,55,42,.14);
+    }
+}
+
+@keyframes mobileMenuIn {
+    from { opacity: 0; transform: translateY(-8px) scale(.985); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* =========================================
+   V20 — HEADER SIEMPRE VISIBLE + MENÚ MÓVIL ROBUSTO
+========================================= */
+.header,
+.header.header-hidden,
+.header.menu-open {
+    transform: translateY(0) !important;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 5000;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        position: relative;
+        flex-wrap: nowrap !important;
+        overflow: visible !important;
+    }
+
+    .menu-toggle {
+        display: inline-flex !important;
+        position: relative;
+        z-index: 5300;
+    }
+
+    .nav-links {
+        position: absolute !important;
+        top: calc(100% + 8px) !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: .75rem !important;
+        display: none !important;
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: .2rem !important;
+        max-height: min(70vh, 520px);
+        overflow-y: auto;
+        z-index: 5200 !important;
+    }
+
+    .nav-links.active {
+        display: flex !important;
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .nav-links li,
+    .nav-links a {
+        width: 100% !important;
+    }
+}

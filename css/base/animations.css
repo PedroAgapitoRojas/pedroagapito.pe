@@ -1,0 +1,15 @@
+/* =========================
+   REVEAL ANIMATIONS (SIMPLE + ESTABLE)
+========================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform, opacity;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}

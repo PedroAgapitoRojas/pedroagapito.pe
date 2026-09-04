@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Admin · PedroAgapito.pe</title>
+  <link rel="icon" href="../img/brand/pa-logo-round-clean.png">
+  <link rel="stylesheet" href="admin.css">
+<script>(()=>{try{const s=localStorage.getItem("pa-theme")||localStorage.getItem("theme");document.documentElement.dataset.theme=["green","purple","light"].includes(s)?s:"green"}catch(_){document.documentElement.dataset.theme="green"}})()</script><script src="../js/theme.js" defer></script>
+</head>
+<body>
+  <main class="admin-shell">
+    <section class="login-card" id="loginView">
+      <img src="../img/brand/pa-logo-round-clean.png" alt="PA" class="admin-logo">
+      <p class="eyebrow">PEDROAGAPITO.PE</p>
+      <h1>Panel privado</h1>
+      <p class="muted">Administra contenido, Comunidad y moderación desde un único panel seguro.</p>
+      <form id="loginForm" class="stack">
+        <label>Correo
+          <input id="loginEmail" type="email" autocomplete="username" required>
+        </label>
+        <label>Contraseña
+          <input id="loginPassword" type="password" autocomplete="current-password" required>
+        </label>
+        <button class="primary" type="submit">Iniciar sesión</button>
+        <p id="loginMessage" class="form-message" aria-live="polite"></p>
+      </form>
+      <a href="../index.html" class="back-link">← Volver al portafolio</a>
+    </section>
+
+    <section class="dashboard hidden" id="dashboardView">
+      <header class="admin-header">
+        <div class="brand-row">
+          <img src="../img/brand/pa-logo-round-clean.png" alt="PA" class="header-logo">
+          <div><strong>PedroAgapito.pe</strong><small>CMS privado</small></div>
+        </div>
+        <div class="header-actions"><div class="theme-buttons" aria-label="Cambiar tema de color"><button class="theme-btn" data-theme-choice="purple" type="button">🟣</button><button class="theme-btn" data-theme-choice="green" type="button">🟢</button><button class="theme-btn" data-theme-choice="light" type="button">☀️</button></div>
+          <a class="ghost" href="../index.html" target="_blank" rel="noopener">Ver web ↗</a>
+          <button class="ghost" id="logoutButton" type="button">Cerrar sesión</button>
+        </div>
+      </header>
+
+      <div class="admin-grid">
+        <aside class="sidebar">
+          <p class="sidebar-title">CONTENIDO</p>
+          <button class="tab-button active" data-tab="posts" type="button">📝 Publicaciones</button>
+          <button class="tab-button" data-tab="projects" type="button">💻 Proyectos</button>
+          <button class="tab-button" data-tab="certificates" type="button">🎓 Certificados</button><button class="tab-button" data-tab="technologies" type="button">🛠️ Tecnologías</button><button class="tab-button" data-tab="community" type="button">👥 Comunidad</button><button class="tab-button" data-tab="reports" type="button">🚨 Reportes</button><button class="tab-button" data-tab="banned" type="button">🚫 Palabras prohibidas</button><button class="tab-button" data-tab="comments" type="button">💬 Comentarios</button><button class="tab-button" data-tab="reviews" type="button">⭐ Reseñas</button>
+          <a class="tab-button" href="../community/" target="_blank" rel="noopener">👥 Comunidad V2 ↗</a>
+          <div class="sidebar-note">
+            <strong>Publicación automática</strong>
+            <span>Al guardar como “Publicado”, el contenido aparecerá en tu portafolio.</span>
+          </div>
+        </aside>
+
+        <section class="workspace">
+          <div class="workspace-head">
+            <div>
+              <p class="eyebrow" id="sectionEyebrow">PUBLICACIONES</p>
+              <h2 id="sectionTitle">Novedades y artículos</h2>
+            </div>
+            <button class="primary" id="newItemButton" type="button">+ Nuevo</button>
+          </div>
+
+          <div class="content-layout">
+            <div class="items-panel">
+              <div id="itemsList" class="items-list"></div>
+              <p id="itemsEmpty" class="empty hidden">Todavía no hay elementos.</p>
+            </div>
+
+            <div class="editor-panel" id="editorPanel">
+              <div class="editor-placeholder" id="editorPlaceholder">
+                <span>✦</span>
+                <h3>Selecciona un elemento</h3>
+                <p>O pulsa “Nuevo” para crear contenido.</p>
+              </div>
+
+              <form id="postForm" class="editor-form hidden" data-form="posts">
+                <div class="editor-title-row"><h3>Publicación</h3><button class="danger-link delete-button" type="button">Eliminar</button></div>
+                <input type="hidden" name="id">
+                <label>Título<input name="title" required></label>
+                <div class="two-cols">
+                  <label>Categoría<input name="category" placeholder="Novedad"></label>
+                  <label>Estado<select name="status"><option value="draft">Borrador</option><option value="published">Publicado</option></select></label>
+                </div>
+                <label>Resumen<textarea name="excerpt" rows="3"></textarea></label>
+                <label>Contenido<textarea name="content" rows="10" required></textarea></label>
+                <label>Imagen de portada<input name="cover_file" type="file" accept="image/*"><small class="field-note image-current"></small></label>
+                <input type="hidden" name="cover_image_url">
+                <label>Texto alternativo<input name="image_alt" placeholder="Descripción de la imagen"></label>
+                <button class="primary save-button" type="submit">Guardar publicación</button>
+              </form>
+
+              <form id="projectForm" class="editor-form hidden" data-form="projects">
+                <div class="editor-title-row"><h3>Proyecto</h3><button class="danger-link delete-button" type="button">Eliminar</button></div>
+                <input type="hidden" name="id">
+                <label>Nombre<input name="name" required></label>
+                <label>Descripción<textarea name="description" rows="5" required></textarea></label>
+                <label>Tecnologías<input name="technologies" placeholder="HTML, CSS, JavaScript, Docker"></label>
+                <div class="two-cols">
+                  <label>Estado<select name="status"><option value="development">En desarrollo</option><option value="published">Publicado</option><option value="archived">Archivado</option></select></label>
+                  <label>Orden<input name="display_order" type="number" min="0" value="0"></label>
+                </div>
+                <label>URL del proyecto<input name="project_url" type="url" placeholder="https://..."></label>
+                <label>GitHub<input name="github_url" type="url" placeholder="https://github.com/..."></label>
+                <label>Imagen del proyecto<input name="image_file" type="file" accept="image/*"><small class="field-note image-current"></small></label>
+                <input type="hidden" name="image_url">
+                <label>Texto sobre la imagen<input name="image_label" placeholder="ACADEMIC OS"></label>
+                <button class="primary save-button" type="submit">Guardar proyecto</button>
+              </form>
+
+              <form id="technologyForm" class="editor-form hidden" data-form="technologies">
+                <div class="editor-title-row"><h3>Tecnología / herramienta</h3><button class="danger-link delete-button" type="button">Eliminar</button></div>
+                <input type="hidden" name="id">
+                <label>Nombre<input name="name" required maxlength="80" placeholder="Pandas"></label>
+                <div class="two-cols">
+                  <label>Slug<input name="slug" required maxlength="100" placeholder="pandas"></label>
+                  <label>Icono<input name="icon" maxlength="8" placeholder="🐼"></label>
+                </div>
+                <label>Descripción corta<textarea name="description" rows="3" maxlength="280" required></textarea></label>
+                <div class="two-cols">
+                  <label>Categoría<input name="category" placeholder="Python / Data"></label>
+                  <label>Nivel<select name="level"><option>Principal</option><option>Intermedio</option><option>En aprendizaje</option></select></label>
+                </div>
+                <div class="two-cols">
+                  <label>Orden<input name="display_order" type="number" min="0" value="0"></label>
+                  <label>Estado<select name="status"><option value="published">Publicado</option><option value="draft">Borrador</option><option value="archived">Archivado</option></select></label>
+                </div>
+                <label class="inline-check"><input name="featured" type="checkbox"> Mostrar entre las 6 destacadas</label>
+                <label class="inline-check"><input name="practice_enabled" type="checkbox"> Tiene práctica guiada</label>
+                <label>Introducción de práctica<textarea name="practice_intro" rows="3" placeholder="Qué aprenderá y cómo abordar el ejercicio"></textarea></label>
+                <label>Ejercicios guiados (JSON)<textarea name="exercises" rows="12" placeholder='[{"title":"...","difficulty":"Básico","statement":"...","hint":"...","solution":"...","challenge":"...","code":"..."}]'></textarea><small class="field-note">Cada ejercicio puede tener title, difficulty, statement, hint, solution, challenge y code.</small></label>
+                <button class="primary save-button" type="submit">Guardar tecnología</button>
+              </form>
+
+              <form id="certificateForm" class="editor-form hidden" data-form="certificates">
+                <div class="editor-title-row"><h3>Certificado</h3><button class="danger-link delete-button" type="button">Eliminar</button></div>
+                <input type="hidden" name="id">
+                <label>Título<input name="title" required></label>
+                <div class="two-cols">
+                  <label>Institución / plataforma<input name="platform"></label>
+                  <label>Icono<input name="icon" placeholder="🎓"></label>
+                </div>
+                <label>Descripción<textarea name="description" rows="4"></textarea></label>
+                <div class="two-cols">
+                  <label>Fecha de emisión<input name="issue_date" type="date"></label>
+                  <label>Orden<input name="display_order" type="number" min="0" value="0"></label>
+                </div>
+                <label>Estado<select name="status"><option value="draft">Borrador</option><option value="published">Publicado</option><option value="archived">Archivado</option></select></label>
+                <label>Imagen opcional<input name="image_file" type="file" accept="image/*"><small class="field-note image-current"></small></label>
+                <input type="hidden" name="image_url">
+                <label>Archivo del certificado (PDF)<input name="credential_file" type="file" accept="application/pdf"><small class="field-note credential-current"></small></label>
+                <input type="hidden" name="credential_url">
+                <label>O enlace externo de credencial<input name="credential_external" type="url" placeholder="https://..."></label>
+                <button class="primary save-button" type="submit">Guardar certificado</button>
+              </form>
+
+              <div id="moderationStats" class="moderation-stats hidden"></div><p id="editorMessage" class="form-message" aria-live="polite"></p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/supabase-config.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

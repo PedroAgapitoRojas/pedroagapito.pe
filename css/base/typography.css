@@ -1,0 +1,31 @@
+h1,
+h2,
+h3,
+h4 {
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+p {
+    color: var(--color-text-secondary);
+}
+
+.section-title {
+    color: var(--color-text);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.section-subtitle {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: 0.8;
+}

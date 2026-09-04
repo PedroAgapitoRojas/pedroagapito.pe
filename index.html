@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="green">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pedro Agapito | Ingeniería de Sistemas, Tecnología y Cultura</title>
+
+    <meta name="description"
+    content="Portafolio de Pedro Agapito: Ingeniería de Sistemas, desarrollo de software, Academic OS, Paso & Tradición y difusión de la cultura peruana.">
+
+    <meta name="keywords"
+        content="Pedro Agapito, Ingeniería de Sistemas, desarrollo de software, Academic OS, Docker, ETL, marinera norteña, cultura peruana">
+
+    <meta name="author" content="Pedro Agapito">
+
+    <meta property="og:title"
+        content="Pedro Agapito | Ingeniería de Sistemas, Tecnología y Cultura">
+
+    <meta property="og:description"
+        content="Ingeniería de Sistemas, proyectos de software y una identidad vinculada a la marinera norteña y la cultura peruana.">
+
+    <meta property="og:type" content="website">
+
+
+    <meta property="og:image" content="img/brand/pa-logo-round-clean.png">
+    <meta property="og:locale" content="es_PE">
+    <meta name="twitter:card" content="summary">
+    <meta name="color-scheme" content="dark light">
+    <link rel="icon" type="image/png" href="img/brand/pa-logo-round-clean.png">
+
+    <script>
+        (() => {
+            const saved = localStorage.getItem('theme');
+            const theme = ['purple', 'green', 'light'].includes(saved) ? saved : 'green';
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script src="js/theme.js" defer></script>
+</head>
+
+
+<div class="certificate-modal" id="certificateModal">
+
+    <div class="modal-content">
+
+        <button class="close-modal" id="closeModal">
+            ✕
+        </button>
+
+        <iframe id="certificateFrame"
+                src=""
+                frameborder="0">
+        </iframe>
+
+    </div>
+
+</div>
+
+
+<body data-experience="systems">
+    <div class="v2-ambient" aria-hidden="true"><i></i><i></i><i></i></div>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="header">
+
+        <nav class="navbar container">
+
+            <a href="#" class="logo">
+                Pedro Agapito
+            </a>
+
+            <div class="theme-buttons" aria-label="Cambiar tema de color">
+
+                <button class="theme-btn purple-theme" type="button" data-theme-choice="purple" aria-label="Usar tema púrpura" title="Tema púrpura">
+                    <span aria-hidden="true">🟣</span>
+                </button>
+
+                <button class="theme-btn green-btn" type="button" data-theme-choice="green" aria-label="Usar tema verde" title="Tema verde">
+                    <span aria-hidden="true">🟢</span>
+                </button>
+
+                <button class="theme-btn light-btn" type="button" data-theme-choice="light" aria-label="Usar tema claro" title="Tema claro">
+                    <span aria-hidden="true">☀️</span>
+                </button>
+
+            </div>
+
+            <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false">
+                ☰
+            </button>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="#inicio">Inicio</a>
+                </li>
+
+                <li>
+                    <a href="#about">Sobre mí</a>
+                </li>
+
+                <li>
+                    <a href="#projects">Proyectos</a>
+                </li>
+
+                <li>
+                    <a href="#publications">Publicaciones</a>
+                </li>
+
+                <li>
+                    <a href="#certificates">Certificados</a>
+                </li>
+
+                <li>
+                    <a href="#redes">Redes</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contacto</a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main>
+
+
+        <section class="hero" id="inicio">
+            <div class="hero-code-bg" aria-hidden="true">
+                <span>const enfoque = "tecnología";</span>
+                <span>function construirSoluciones() {</span>
+                <span>&nbsp;&nbsp;return diseño + lógica + impacto;</span>
+                <span>}</span>
+                <span>SELECT proyecto, objetivo FROM ideas WHERE estado = 'real';</span>
+                <span>docker compose up --build</span>
+                <span>python etl_pipeline.py --source datos --target analytics</span>
+                <span>git commit -m "crear con propósito"</span>
+            </div>
+            <div class="hero-culture-mark" aria-hidden="true">
+                <svg viewBox="0 0 220 150" role="presentation">
+                    <path d="M22 116 C54 82 82 108 102 79 C124 48 155 37 196 55" />
+                    <path d="M116 77 C126 55 146 39 174 40 C188 40 198 47 204 57 C191 53 180 56 171 65 C160 76 149 79 136 77" />
+                    <path d="M131 44 C144 23 172 17 194 31" />
+                    <path d="M37 122 C69 127 102 124 133 111" />
+                </svg>
+                <span>Marinera · Perú</span>
+            </div>
+
+            <div class="hero-culture-scene" aria-hidden="true">
+                <div class="culture-ribbon culture-ribbon-a"></div>
+                <div class="culture-ribbon culture-ribbon-b"></div>
+                <div class="culture-word">MARINERA</div>
+                <div class="culture-peru">PERÚ</div>
+            </div>
+            <div class="hero-depth-orb hero-depth-orb-a" aria-hidden="true"></div><div class="hero-depth-orb hero-depth-orb-b" aria-hidden="true"></div>
+            <div class="container hero-content v2-tilt-stage">
+
+                <div class="hero-text">
+
+                    <p class="hero-subtitle">
+                        Ingeniería · Marinera · Cultura
+                    </p>
+
+                    <h1 class="hero-title">
+                        Hola, soy <span class="hero-name">Pedro Agapito</span>
+                    </h1>
+
+                    <p class="hero-roles">
+                        Ingeniero de Sistemas · Bailarín profesional de Marinera Norteña · Difusor de la cultura peruana
+                    </p>
+
+                    <p class="hero-description">
+                        Desarrollo proyectos de software y soluciones tecnológicas, mientras comparto mi trabajo, mi danza y mi identidad cultural.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a href="#projects" class="btn-primary">
+                            Ver Proyectos
+                        </a>
+
+                        <a href="#redes" class="btn-secondary">
+                            Sígueme
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <aside class="social-identity" id="redes" aria-label="Redes sociales de Pedro Agapito">
+                    <div class="social-brand">
+                        <div class="social-avatar">
+                            <img src="img/brand/pa-logo-round-clean.png" alt="Logo personal PA de Pedro Agapito">
+                        </div>
+                        <div>
+                            <span class="social-kicker">Mi espacio personal</span>
+                            <h2>Sígueme</h2>
+                            <p>Conecta conmigo en mis redes.</p>
+                        </div>
+                    </div>
+
+                    <div class="social-grid">
+                        <a class="social-card instagram featured" href="https://www.instagram.com/pedroagapito.pe" target="_blank" rel="noopener noreferrer" aria-label="Seguir a Pedro Agapito en Instagram">
+                            <span class="social-icon">IG</span>
+                            <span class="social-copy"><strong>Instagram</strong><small>Principal</small></span>
+                            <span class="social-arrow">↗</span>
+                        </a>
+
+
+                        <a class="social-card facebook" href="https://www.facebook.com/share/194SWN4nxg/" target="_blank" rel="noopener noreferrer" aria-label="Seguir a Pedro Agapito en Facebook">
+                            <span class="social-icon">f</span>
+                            <span class="social-copy"><strong>Facebook</strong><small>Sígueme</small></span>
+                            <span class="social-arrow">↗</span>
+                        </a>
+
+                        <a class="social-card linkedin" href="https://www.linkedin.com/in/pedro-jaramillo-rojas-agapito" target="_blank" rel="noopener noreferrer" aria-label="Conectar con Pedro Agapito en LinkedIn">
+                            <span class="social-icon">in</span>
+                            <span class="social-copy"><strong>LinkedIn</strong><small>Conecta</small></span>
+                            <span class="social-arrow">↗</span>
+                        </a>
+                    </div>
+
+                    <p class="social-note">Instagram es mi red principal.</p>
+                </aside>
+
+            </div>
+
+        </section>
+
+
+
+        <section class="about hidden" id="about">
+
+            <div class="container about-container">
+
+                <div class="about-text">
+
+                    <p class="section-subtitle">
+                        Sobre mí
+                    </p>
+
+                    <h2 class="section-title">
+                        Construyendo soluciones reales con tecnología
+                    </h2>
+
+                    <p class="about-description">
+
+                        Soy estudiante y desarrollador enfocado en proyectos
+                        de software, bases de datos y soluciones tecnológicas.
+
+                        Me interesa crear aplicaciones funcionales, modernas
+                        y orientadas a resolver problemas reales.
+
+                    </p>
+
+                    <p class="about-description">
+
+                        Actualmente desarrollo proyectos relacionados con
+                        frontend, SQL Server, aplicaciones móviles y
+                        sistemas de gestión.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =========================
+             SKILLS
+        ========================== -->
+
+        <section class="skills reveal" id="skills">
+            <div class="container skills-container">
+                <p class="section-subtitle">Habilidades</p>
+                <h2 class="section-title">Tecnologías y herramientas</h2>
+                <p class="v2-explore-hint">Mueve el cursor para iluminar · toca una tarjeta para descubrirla</p>
+                <div class="skills-grid v2-skills-grid" id="skillsGrid" aria-live="polite"></div>
+                <div class="skills-more">
+                    <p>He trabajado con más tecnologías y herramientas a lo largo de mi formación y proyectos.</p>
+                    <button class="btn-secondary skills-more-button" id="showAllSkills" type="button">Ver todas las tecnologías →</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="skills-explorer" id="skillsExplorer" aria-hidden="true">
+            <div class="skills-explorer-backdrop" data-skills-close></div>
+            <section class="skills-explorer-panel" role="dialog" aria-modal="true" aria-labelledby="skillsExplorerTitle">
+                <header class="skills-explorer-header">
+                    <div><span class="section-subtitle">EXPLORADOR</span><h2 id="skillsExplorerTitle">Todas las tecnologías y herramientas</h2><p>Busca por nombre, categoría o descripción. Desde aquí también puedes entrar a una práctica guiada.</p></div>
+                    <button class="skills-explorer-close" type="button" data-skills-close aria-label="Cerrar">×</button>
+                </header>
+                <label class="skills-search-wrap"><span>⌕</span><input id="skillsSearch" type="search" placeholder="Buscar tecnología…" autocomplete="off"></label>
+                <div class="skills-grid skills-all-grid" id="allSkillsGrid"></div>
+            </section>
+        </div>
+
+        <!-- =========================
+             PROJECTS
+        ========================== -->
+
+        <section class="projects reveal" id="projects">
+
+            <div class="container projects-container">
+
+                <p class="section-subtitle">
+                    Proyectos
+                </p>
+
+                <h2 class="section-title">
+                    Algunos proyectos destacados
+                </h2>
+
+                <div class="projects-grid" id="projectsGrid" aria-live="polite"></div>
+
+            </div>
+
+        </section>
+
+        <!-- =========================
+             PUBLICACIONES / NOVEDADES
+        ========================== -->
+
+        <section class="publications reveal" id="publications">
+            <div class="container publications-container">
+                <div class="publications-heading">
+                    <div>
+                        <p class="section-subtitle">Publicaciones</p>
+                        <h2 class="section-title">Novedades, ideas y avances</h2>
+                    </div>
+                    <p class="publications-intro">Un espacio para compartir avances de proyectos, tecnología y cultura peruana.</p>
+                </div>
+
+                <div class="publications-grid" id="publicationsGrid" aria-live="polite"></div>
+            </div>
+        </section>
+
+        <div class="publication-modal" id="publicationModal" aria-hidden="true">
+            <div class="publication-modal-card" role="dialog" aria-modal="true" aria-labelledby="publicationModalTitle">
+                <button class="publication-modal-close" id="publicationModalClose" type="button" aria-label="Cerrar publicación">✕</button>
+                <div class="publication-modal-image-wrap" id="publicationModalImageWrap">
+                    <img id="publicationModalImage" src="" alt="">
+                </div>
+                <div class="publication-modal-body">
+                    <div class="publication-meta">
+                        <span id="publicationModalCategory"></span>
+                        <span id="publicationModalDate"></span>
+                    </div>
+                    <h2 id="publicationModalTitle"></h2>
+                    <div id="publicationModalContent" class="publication-modal-content"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- =========================
+             CERTIFICATES
+        ========================== -->
+
+      <section class="certificates reveal" id="certificates">
+
+    <div class="container">
+
+        <p class="section-subtitle">
+            Certificados
+        </p>
+
+        <h2 class="section-title">
+            Formación y aprendizaje continuo
+        </h2>
+
+        <div class="certificates-grid" id="certificatesGrid" aria-live="polite"></div>
+
+         </div>
+
+        </section>
+
+        <!-- =========================
+             CONTACT
+        ========================== -->
+
+        <section class="contact hidden" id="contact">
+            <div class="container contact-shell">
+                <div class="contact-intro">
+                    <p class="section-subtitle">Contacto</p>
+                    <h2 class="contact-title">¿Hablamos de <span>ideas</span><br>y proyectos?</h2>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon" aria-hidden="true">✉</div>
+                    <div>
+                        <a href="mailto:pedroagapito2101@gmail.com">pedroagapito2101@gmail.com</a>
+                        <small>Escríbeme un correo</small>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon contact-in" aria-hidden="true">in</div>
+                    <div>
+                        <a href="https://www.linkedin.com/in/pedro-jaramillo-rojas-agapito" target="_blank" rel="noopener noreferrer">Pedro Jaramillo Rojas Agapito</a>
+                        <small>Conéctate conmigo</small>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon" aria-hidden="true">⌖</div>
+                    <div>
+                        <strong>Perú</strong>
+                        <small>Marca personal</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+
+    <section class="reviews-section" id="reviews">
+        <div class="container">
+            <p class="section-subtitle">Testimonios</p>
+            <h2 class="section-title">Lo que dicen de mi trabajo</h2>
+            <p class="reviews-note">📌 Esta página sigue evolucionando — voy sumando proyectos, prácticas y mejoras constantemente.</p>
+            <div id="reviewsList" class="reviews-list"><div class="reviews-empty">Cargando reseñas…</div></div>
+            <div class="reviews-form-wrap">
+                <h3>Deja tu reseña</h3>
+                <p class="reviews-form-hint">Tu reseña se revisará antes de publicarse.</p>
+                <form id="reviewForm" class="reviews-form">
+                    <label>Tu nombre<input name="name" maxlength="60" required placeholder="Ej. Andrea Bravo"></label>
+                    <label>Calificación<select name="rating"><option value="">Sin calificación</option><option value="5">⭐⭐⭐⭐⭐ Excelente</option><option value="4">⭐⭐⭐⭐ Muy buena</option><option value="3">⭐⭐⭐ Buena</option><option value="2">⭐⭐ Regular</option><option value="1">⭐ Mala</option></select></label>
+                    <label>Tu reseña<textarea name="body" rows="4" maxlength="800" minlength="10" required placeholder="Cuéntame tu experiencia..."></textarea></label>
+                    <button type="submit" class="primary-button">Enviar reseña</button>
+                    <p id="reviewFormMessage" class="reviews-form-message" aria-live="polite"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
+        <p>
+            © 2026 Pedro Agapito — Portafolio Profesional
+        </p>
+
+    </footer>
+
+    <div class="command-palette" id="commandPalette" aria-hidden="true"><div class="command-backdrop" data-command-close></div><div class="command-box" role="dialog" aria-modal="true"><div class="command-search">⌘ <input id="commandInput" placeholder="¿Qué quieres explorar?" autocomplete="off"><kbd>ESC</kbd></div><div class="command-results" id="commandResults"></div><div class="command-foot">Ctrl + K · Navega sin perder el ritmo</div></div></div>
+    <button class="command-trigger" id="commandTrigger" type="button">⌘K</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-config.js"></script>
+    <script src="js/content.js"></script>
+    <script src="js/cms-public.js"></script>
+    <script src="js/skills.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/execution-config.js"></script>
+    <script src="js/v2-experience.js"></script>
+    <script src="js/reviews.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,547 @@
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: var(--color-background);
+    padding-top: 80px;
+
+    opacity: 0;
+    transform: translateY(30px);
+    animation: heroFadeIn 0.9s ease forwards;
+}
+
+@keyframes heroFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.hero-text {
+    max-width: 720px;
+}
+
+/* =========================
+   ELEMENTOS DEL HERO
+========================= */
+
+.hero-subtitle {
+    color: var(--color-primary);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.7s ease forwards;
+    animation-delay: 0.2s;
+}
+
+.hero-title {
+    font-size: clamp(3.2rem, 7vw, 5.5rem);
+    line-height: 1.1;
+    color: var(--color-text);
+    margin-bottom: 2rem;
+
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.7s ease forwards;
+    animation-delay: 0.4s;
+}
+
+.hero-description {
+    font-size: 1.15rem;
+    line-height: 2;
+    color: var(--color-text-secondary);
+    margin-bottom: 3rem;
+    max-width: 650px;
+
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.7s ease forwards;
+    animation-delay: 0.6s;
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.7s ease forwards;
+    animation-delay: 0.8s;
+}
+
+/* =========================
+   ANIMACIÓN BASE
+========================= */
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+}
+/* =========================================
+   IDENTIDAD + REDES INTEGRADAS
+========================================= */
+.hero-content {
+    justify-content: space-between;
+}
+
+.hero-roles {
+    max-width: 760px;
+    margin: -0.75rem 0 1.35rem;
+    color: var(--color-text);
+    font-size: clamp(0.98rem, 1.35vw, 1.08rem);
+    line-height: 1.75;
+    font-weight: 600;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.7s ease forwards;
+    animation-delay: 0.52s;
+}
+
+.social-identity {
+    width: min(100%, 370px);
+    flex: 0 0 370px;
+    position: relative;
+    padding: 1.15rem;
+    border: 1px solid color-mix(in srgb, var(--color-border) 78%, var(--color-primary));
+    border-radius: 24px;
+    background:
+        radial-gradient(circle at 90% 0%, color-mix(in srgb, var(--color-primary) 15%, transparent), transparent 36%),
+        linear-gradient(180deg, color-mix(in srgb, var(--color-surface) 94%, transparent), color-mix(in srgb, var(--color-background) 97%, transparent));
+    box-shadow: 0 22px 60px rgba(0,0,0,.28);
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(18px);
+    animation: fadeUp 0.8s ease forwards;
+    animation-delay: .72s;
+}
+
+.social-identity::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(120deg, transparent 20%, color-mix(in srgb, var(--color-primary) 7%, transparent), transparent 72%);
+}
+
+.social-brand {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: .9rem;
+    padding: .25rem .25rem 1rem;
+}
+
+.social-avatar {
+    width: 62px;
+    height: 62px;
+    flex: 0 0 62px;
+    border-radius: 50%;
+    overflow: hidden;
+    clip-path: circle(50% at 50% 50%);
+    border: 1px solid color-mix(in srgb, var(--color-primary) 38%, var(--color-border));
+    background: var(--color-background);
+    box-shadow: 0 10px 24px rgba(0,0,0,.24);
+}
+
+.social-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.social-kicker {
+    display: block;
+    margin-bottom: .2rem;
+    color: var(--color-primary);
+    font-size: .72rem;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.social-brand h2 {
+    margin: 0;
+    color: var(--color-text);
+    font-size: 1.35rem;
+    line-height: 1.2;
+}
+
+.social-brand p {
+    margin: .25rem 0 0;
+    color: var(--color-text-secondary);
+    font-size: .86rem;
+}
+
+.social-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .7rem;
+}
+
+.social-card {
+    min-height: 72px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: .65rem;
+    padding: .8rem .82rem;
+    border-radius: 16px;
+    border: 1px solid var(--color-border);
+    background: color-mix(in srgb, var(--color-surface) 91%, transparent);
+    color: var(--color-text);
+    text-decoration: none;
+    transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease, background .28s ease;
+}
+
+.social-card.featured {
+    grid-column: 1 / -1;
+}
+
+.social-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(0,0,0,.22);
+}
+
+.social-icon {
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    border-radius: 11px;
+    border: 1px solid var(--color-border);
+    background: rgba(255,255,255,.025);
+    font-size: .75rem;
+    font-weight: 800;
+    letter-spacing: -.02em;
+}
+
+.social-copy {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: .08rem;
+}
+
+.social-copy strong {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: .88rem;
+}
+
+.social-copy small {
+    color: var(--color-text-secondary);
+    font-size: .7rem;
+}
+
+.social-arrow {
+    color: var(--color-text-secondary);
+    font-size: .95rem;
+    transition: transform .25s ease, color .25s ease;
+}
+
+.social-card:hover .social-arrow {
+    transform: translate(2px,-2px);
+    color: var(--color-text);
+}
+
+.social-card.instagram:hover {
+    border-color: #d946ef;
+    background: linear-gradient(135deg, rgba(131,58,180,.12), rgba(253,29,29,.08), rgba(252,176,69,.08));
+}
+.social-card.instagram .social-icon { color: #f472b6; }
+
+.social-card.tiktok:hover {
+    border-color: #25f4ee;
+    background: linear-gradient(135deg, rgba(37,244,238,.08), rgba(254,44,85,.08));
+}
+.social-card.tiktok .social-icon { color: #25f4ee; text-shadow: 1px 1px 0 rgba(254,44,85,.55); }
+
+.social-card.facebook:hover {
+    border-color: #1877f2;
+    background: rgba(24,119,242,.09);
+}
+.social-card.facebook .social-icon { color: #60a5fa; }
+
+.social-card.linkedin:hover {
+    border-color: #0a66c2;
+    background: rgba(10,102,194,.09);
+}
+.social-card.linkedin .social-icon { color: #60a5fa; }
+
+.social-note {
+    position: relative;
+    margin: .85rem .15rem .05rem;
+    color: var(--color-text-secondary);
+    font-size: .72rem;
+    text-align: right;
+}
+
+@media (max-width: 980px) {
+    .hero-content {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-text {
+        max-width: 780px;
+    }
+
+    .social-identity {
+        width: 100%;
+        max-width: 720px;
+        flex-basis: auto;
+    }
+}
+
+@media (max-width: 560px) {
+    .social-identity {
+        padding: .95rem;
+        border-radius: 20px;
+    }
+
+    .social-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .social-card.featured {
+        grid-column: auto;
+    }
+
+    .social-card {
+        min-height: 66px;
+    }
+
+    .hero-roles {
+        line-height: 1.6;
+    }
+}
+
+/* =========================================
+   CAPA TECNOLÓGICA + GUIÑO CULTURAL
+   Mantiene el hero original, pero añade profundidad sin rediseñarlo.
+========================================= */
+.hero {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background:
+        radial-gradient(circle at 21% 48%, rgba(52, 151, 91, .11), transparent 35%),
+        radial-gradient(circle at 91% 45%, rgba(201,165,92,.055), transparent 25%),
+        var(--color-background);
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -3;
+    opacity: .38;
+    background-image:
+        linear-gradient(rgba(82, 179, 111, .07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(82, 179, 111, .06) 1px, transparent 1px);
+    background-size: 46px 46px;
+    mask-image: linear-gradient(90deg, black 0 63%, transparent 88%);
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    left: -9%;
+    top: 15%;
+    width: 67%;
+    height: 66%;
+    z-index: -2;
+    opacity: .25;
+    background:
+      repeating-linear-gradient(90deg, transparent 0 46px, rgba(77,180,112,.22) 47px 48px, transparent 49px 82px),
+      repeating-linear-gradient(0deg, transparent 0 34px, rgba(77,180,112,.13) 35px 36px, transparent 37px 67px);
+    clip-path: polygon(0 7%, 93% 0, 100% 88%, 8% 100%);
+    transform: perspective(600px) rotateX(59deg) translateY(25%);
+    transform-origin: bottom;
+}
+
+.hero-code-bg {
+    position: absolute;
+    z-index: -1;
+    left: max(3vw, 24px);
+    top: 23%;
+    width: min(500px, 43vw);
+    display: grid;
+    gap: .45rem;
+    pointer-events: none;
+    color: rgba(104, 220, 139, .39);
+    font: 500 clamp(.68rem, .85vw, .82rem)/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    letter-spacing: .01em;
+    filter: drop-shadow(0 0 15px rgba(82,180,110,.16));
+    user-select: none;
+}
+
+
+.hero-code-bg::before {
+    content: "";
+    position: absolute;
+    inset: -1.6rem -2rem;
+    z-index: -1;
+    background: radial-gradient(ellipse at 30% 45%, rgba(19, 72, 42, .18), transparent 72%);
+    border-left: 1px solid rgba(96, 214, 132, .08);
+    pointer-events: none;
+}
+
+.hero-code-bg span:nth-child(2),
+.hero-code-bg span:nth-child(3),
+.hero-code-bg span:nth-child(4) { margin-left: 2.5rem; }
+.hero-code-bg span:nth-child(5) { margin-top: 1.2rem; opacity: .9; }
+.hero-code-bg span:nth-child(6) { opacity: .8; }
+.hero-code-bg span:nth-child(7) { opacity: .72; }
+.hero-code-bg span:nth-child(8) { opacity: .62; }
+
+.hero-culture-mark {
+    position: absolute;
+    right: 1.5%;
+    bottom: 7%;
+    width: min(245px, 22vw);
+    z-index: -1;
+    opacity: .16;
+    color: #d1aa57;
+    pointer-events: none;
+}
+
+.hero-culture-mark svg { width: 100%; height: auto; }
+.hero-culture-mark path {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+.hero-culture-mark span {
+    display: block;
+    margin-top: -.3rem;
+    text-align: right;
+    font-size: .7rem;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+}
+
+.hero-content { position: relative; z-index: 1; }
+.hero-text,
+.social-identity {
+    backdrop-filter: blur(1px);
+}
+
+@media (max-width: 768px) {
+    .hero-code-bg { width: 78vw; top: 17%; opacity: .72; }
+    .hero-culture-mark { width: 150px; right: -25px; bottom: 4%; }
+}
+
+/* Ajustes de contraste para el tema claro sin borrar la capa tecnológica. */
+[data-theme="light"] .hero {
+    background:
+        radial-gradient(circle at 21% 48%, rgba(22, 122, 82, .11), transparent 35%),
+        radial-gradient(circle at 91% 45%, rgba(181, 139, 53, .08), transparent 25%),
+        var(--color-background);
+}
+
+[data-theme="light"] .hero::before {
+    opacity: .54;
+    background-image:
+        linear-gradient(rgba(22, 122, 82, .10) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(22, 122, 82, .09) 1px, transparent 1px);
+}
+
+[data-theme="light"] .hero::after {
+    opacity: .24;
+}
+
+[data-theme="light"] .hero-code-bg {
+    color: rgba(17, 112, 73, .48);
+    filter: none;
+}
+
+[data-theme="light"] .hero-code-bg::before {
+    background: radial-gradient(ellipse at 30% 45%, rgba(22, 122, 82, .10), transparent 72%);
+}
+
+[data-theme="light"] .hero-culture-mark {
+    color: #9b7429;
+    opacity: .20;
+}
+
+[data-theme="light"] .social-identity,
+[data-theme="light"] .social-card {
+    box-shadow: 0 16px 40px rgba(31, 55, 42, .09);
+}
+
+[data-theme="light"] .social-card {
+    background: rgba(255,255,255,.72);
+}
+
+
+/* El logo se muestra como insignia circular, sin esquinas blancas. */
+.social-avatar img {
+    border-radius: 50%;
+    clip-path: circle(49% at 50% 50%);
+}
+
+/* V10: logo grande, circular y sin esquinas blancas. */
+.social-avatar {
+    width: 70px;
+    height: 70px;
+    flex: 0 0 70px;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.social-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    clip-path: circle(50% at 50% 50%);
+    border-radius: 50%;
+    transform: none;
+}
+.social-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    clip-path: none;
+    border-radius: 50%;
+    transform: scale(.88);
+}
